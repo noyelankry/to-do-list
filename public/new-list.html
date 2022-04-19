@@ -33,14 +33,16 @@
     </div>
 
     <div>
-        <div class="name-your-list">
+        <div id="name-your-list">
             <label for="list-name">name your list:</label>
             <input type="text" name="list-name" id="list-name">
         </div>
-        <ul id="result-list">
-
-        </ul>
-        <button id="save-n-exit-btn">Save & Exit</button>
+        <div id="date-of-list">
+            <label for="list-date">date:</label>
+            <input type="date" name="list-date" id="list-date">
+        </div>
+        <ul id="result-list"></ul>
+        <button id="save-n-exit-btn" onclick="saveList()">Save & Exit</button>
     </div>
 </body>
 

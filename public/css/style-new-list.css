@@ -18,8 +18,8 @@ body {
     text-align: center;
     width: 100%;
     height: 100%;
-    margin:0;
-    min-width:900px;
+    margin: 0;
+    min-width: 900px;
 }
 
 button {
@@ -82,8 +82,8 @@ label {
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 100vh;
+    width: 100%;
+    align-items: center;
 }
 
 .rmv-item-btn {
@@ -156,12 +156,19 @@ label {
     color: grey;
 }
 
-#list-name {
+#list-name,
+#list-date {
     display: inline;
     border-width: 0px 0px 1px;
     border-radius: 0;
-    width: 300px;
+    width: 200px;
     margin-bottom: 30px;
+    margin-right: 40px;
+}
+
+#name-your-list,
+#date-of-list {
+    display: inline;
 }
 
 #save-n-exit-btn {
@@ -182,5 +189,11 @@ nav {
 }
 
 header {
-    margin-top:70px;
+    margin-top: 70px;
+}
+
+.list-item>label {
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
 }

@@ -8,10 +8,9 @@ const listSchema = new Schema({
     date: {
         type: String
     },
-    list_items: {
+    listItems: {
         type: Array
     }
 }, { timestamps: true })
 
-const List = mongoose.model('List', listSchema)
-module.exports = List
+module.exports = mongoose.model('List', listSchema)

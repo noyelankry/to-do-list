@@ -1,11 +1,9 @@
-const { response } = require("express");
-const { listenerCount } = require("../models/lists");
-const List = require("../models/lists");
+const express = require("express")
+const List = require("../models/lists")
 
 // show the list of lists
-
 const index = (req, res) => {
-  List.find() // mongoose query to find and return all the to-do-lists from the DB
+  List.find()
     .then((response) => {
       res.json({
         response
@@ -13,24 +11,25 @@ const index = (req, res) => {
     })
     .catch((error) => {
       res.json({
-        message: "An error has occured!"
+        message: "An error has occured!",
+        error
       })
     })
 }
 
 // return a specific list
-
 const show = (req, res) => {
   let listID = req.body.listID;
   List.findById(listID)
     .then((response) => {
       res.json({
-        response,
+        response
       })
     })
     .catch((error) => {
       res.json({
-        message: "An error has occured!"
+        message: "An error has occured!",
+        error
       })
     })
 }
@@ -40,7 +39,7 @@ const add = (req, res) => {
   let list = new List({
     name: req.body.name,
     date: req.body.date,
-    list_items: req.body.list_items,
+    listItems: req.body.listItems,
   })
   list
     .save()
@@ -51,7 +50,8 @@ const add = (req, res) => {
     })
     .catch((error) => {
       res.json({
-        message: "An error has occured!"
+        message: "An error has occured!",
+        error
       })
     })
 }
@@ -63,7 +63,7 @@ const update = (req, res) => {
   let updateList = {
     name: req.body.name,
     date: req.body.date,
-    list_items: req.body.list_items
+    listItems: req.body.listItems
   }
 
   List.findByIdAndUpdate(listID, { $set: updateList })
@@ -74,7 +74,8 @@ const update = (req, res) => {
     })
     .catch((error) => {
       res.json({
-        message: "An error has occured!"
+        message: "An error has occured!",
+        error
       })
     })
 }
@@ -90,7 +91,8 @@ const deleteList = (req, res) => {
     })
     .catch((error) => {
       res.json({
-        message: "An error has occured!"
+        message: "An error has occured!",
+        error
       })
     })
 }

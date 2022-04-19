@@ -7,7 +7,7 @@ const app = express()
 const expressLayouts = require('express-ejs-layouts')
 
 const mongoose = require('mongoose')
-const morgan = require('morgan') // login console
+const morgan = require('morgan')
 const bodyParser = require('body-parser')
 
 app.set('view engine', 'ejs')
@@ -25,8 +25,6 @@ const db = mongoose.connection
 db.on('error', error => console.log(error))
 db.once('open', () => console.log('DB Connection Established!'))
 
-const listRoute = require('./js/api/routes/lists-route')
-
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -36,4 +34,5 @@ app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`)
 })
 
-app.use('/api/list', listRoute)
+const listRoute = require('./js/api/routes/lists-route')
+app.use('/list', listRoute)

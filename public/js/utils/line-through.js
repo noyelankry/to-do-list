@@ -1,7 +1,7 @@
 export const lineThrough = (elem) => {
     if ($(elem).is(':checked')) {
-        $(elem).parent().addClass('line-through')
+        $(elem).next().addClass('line-through')
     } else {
-        $(elem).parent().removeClass('line-through')
+        $(elem).next().removeClass('line-through')
     }
 }
