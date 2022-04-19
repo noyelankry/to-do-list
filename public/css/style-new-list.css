@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Urbanist:wght@200&display=swap');
+@import url('https://db.onlinewebfonts.com/c/53cc17cdf80244c21f5b20e98a4b0bd1?family=Hogfish+DEMO');
+
+* {
+    font-family: Grape Nuts;
+    font-size: 1.3rem;
+}
+
+h1 {
+    font-family: 'Hogfish DEMO';
+    font-size: 3rem;
+    color: rgb(41, 66, 107);
+}
+
+body {
+    background-color: rgb(228, 223, 217);
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin:0;
+    min-width:900px;
+}
+
+button {
+    border-radius: 10px;
+    border: 0;
+    background-color: rgb(113, 165, 207);
+    color: white;
+    font-family: Urbanist;
+}
+
+#add-to-list-btn {
+    height: 40px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: rgb(41, 66, 107);
+}
+
+.input-section {
+    display: inline-flex;
+}
+
+input {
+    display: block;
+    margin: auto;
+    width: 80vh;
+    margin-bottom: 10px;
+    border: solid rgb(113, 165, 207);
+    border-radius: 10px;
+    background-color: transparent;
+    font-size: 30px;
+}
+
+label {
+    font-size: 30px;
+}
+
+#input-box {
+    background: url('../img/feather-pen.png') no-repeat scroll 7px 7px;
+    background-size: 25px;
+    padding-left: 35px;
+    height: 40px;
+}
+
+#input-box:focus {
+    outline: rgb(113, 165, 207);
+
+}
+
+.item-checkbox {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    width: 20px;
+}
+
+.list-item {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vh;
+}
+
+.rmv-item-btn {
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.rmv-item-btn:hover {
+    background-color: darksalmon;
+}
+
+.line-through {
+    text-decoration-line: line-through;
+    text-decoration-thickness: 1.5px;
+}
+
+#result-list {
+    width: 100vh;
+    margin: auto;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.login-img {
+    position: absolute;
+    right: 30;
+    top: 30;
+    height: 4.5vh;
+}
+
+.login-btn {
+    background-color: lightgrey;
+    color: black;
+    position: absolute;
+    right: 90;
+    top: 30;
+    padding: 5;
+    font-family: Urbanist;
+    font-size: 0.7em;
+    font-weight: lighter;
+}
+
+.login-btn:hover {
+    background-color: rgb(113, 165, 207);
+}
+
+.main-menu {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 35;
+    right: 160;
+    justify-content: center;
+    align-content: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-family: Urbanist;
+    display: inline;
+    font-weight: 200;
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+.nav-link:hover {
+    color: grey;
+}
+
+#list-name {
+    display: inline;
+    border-width: 0px 0px 1px;
+    border-radius: 0;
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+#save-n-exit-btn {
+    display: block;
+    margin: 0 auto;
+    left: 50%;
+    width: 120px;
+    height: 30px;
+    margin-left: -60px;
+    position: absolute;
+    bottom: 30;
+    font-size: 20px;
+}
+
+nav {
+    display: flex;
+    flex: 1;
+}
+
+header {
+    margin-top:70px;
+}

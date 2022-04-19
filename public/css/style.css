@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Urbanist:wght@200&display=swap');
+@import url('https://db.onlinewebfonts.com/c/53cc17cdf80244c21f5b20e98a4b0bd1?family=Hogfish+DEMO');
+
+* {
+    font-family: Grape Nuts;
+    font-size: 1.3rem;
+}
+
+h1 {
+    font-family: 'Hogfish DEMO';
+    font-size: 3rem;
+    color: rgb(41, 66, 107);
+}
+
+body {
+    display: flex;
+    background-color: rgb(228, 223, 217);
+    text-align: center;
+    flex-direction:row;
+    width: 100%;
+    height: 100%;
+    margin:0;
+    min-width:500px;
+}
+
+.home-page-header {
+    display: flex;
+    flex: 1;
+    flex-direction:column;
+}
+
+.paper-bg-div {
+    display:flex;
+    flex:1;
+    background-image: url('../img/BG.png');
+    background-repeat: no-repeat;
+    background-size: 100vh;
+}
+
+.home-container {
+    display:flex;
+    flex: 1.3;
+    flex-direction: column;
+    align-items:flex-start;
+    margin-left: 5vw;
+}
+
+button {
+    border-radius: 10px;
+    border: 0;
+    background-color: rgb(113, 165, 207);
+    color: white;
+    font-family: Urbanist;
+}
+
+button:hover {
+    background-color: rgb(41, 66, 107);
+}
+
+input {
+    display: block;
+    margin: auto;
+    width: 80vh;
+    margin-bottom: 10px;
+    border: solid rgb(113, 165, 207);
+    border-radius: 10px;
+    background-color: transparent;
+    font-size: 30px;
+}
+
+.login-img {
+    position: absolute;
+    right: 30;
+    top: 30;
+    height: 4.5vh;
+}
+
+.login-btn {
+    background-color: lightgrey;
+    color: black;
+    position: absolute;
+    right: 90;
+    top: 30;
+    padding: 5;
+    font-family: Urbanist;
+    font-size: 0.7em;
+    font-weight: lighter;
+}
+
+.login-btn:hover {
+    background-color: rgb(113, 165, 207);
+}
+
+.main-menu {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 35;
+    right: 160;
+    justify-content: center;
+    align-content: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-family: Urbanist;
+    display: inline;
+    font-weight: 200;
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+.nav-link:hover {
+    color: grey;
+}
+
+#home-page-logo {
+    display:flex;
+    max-width: 25vw;
+    flex: 4;
+}
+
+#home-page-header,
+#home-page-header2  {
+    display: flex;
+    flex: 1; 
+    margin: 0;
+    padding:0;
+}
+
+#home-page-header2 {
+    font-size: 1.5rem;
+    font-family: 'Hogfish DEMO';
+    color: rgb(113, 165, 207);
+    margin-bottom: 5vh;
+    margin-top: 0;
+    padding-top: 0;
+    width: 82%;
+}
+
+nav {
+    display: flex;
+    flex: 1;
+}
