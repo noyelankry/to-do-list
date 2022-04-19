@@ -1,24 +1,31 @@
-const express = require('express') // express framework
-const mongoose = require('mongoose') // mongoDB access 
-const morgan = require('morgan') // login console
-const bodyParser = require('body-parser') // parse
-const { allowedNodeEnvironmentFlags } = require('process')
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config()
+}
 
-const listRoute = require('./js/api/routes/lists-route') //lists route
-
-mongoose.connect('mongodb://localhost:27017/tododbs', { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection
-
-db.on('error', (err) => {
-    console.log(err)
-})
-
-db.once('open', () => {
-    console.log('DB Connection Established!')
-})
-
+const express = require('express')
 const app = express()
+const expressLayouts = require('express-ejs-layouts')
+
+const mongoose = require('mongoose')
+const morgan = require('morgan') // login console
+const bodyParser = require('body-parser')
+
+app.set('view engine', 'ejs')
+app.set('views', `${__dirname}/views`)
+app.set('layout', 'layouts/layout')
+app.use(expressLayouts)
 app.use(express.static('public'))
+
+mongoose.connect(process.env.DATABASE_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+
+const db = mongoose.connection
+db.on('error', error => console.log(error))
+db.once('open', () => console.log('DB Connection Established!'))
+
+const listRoute = require('./js/api/routes/lists-route')
 
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: true }))
