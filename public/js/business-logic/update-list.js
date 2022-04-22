@@ -1,21 +1,23 @@
 import { listToArray } from './list-to-array.js'
 
-export const saveList = () => {
+export const updateList = () => {
+    const queryString = window.location.search
+    const urlParams = new URLSearchParams(queryString) 
+    const listID = urlParams.get('id')
     const name = $('#list-name').val()
     const date = $('#list-date').val()
     const listItems = listToArray()
 
     const addedList = {
+        listID,
         name,
         date,
         listItems
     }
     console.log(addedList)
-    
-    //need to add a duplicate check - if the collection exists ask the user to overwrite/select a new name
 
-    fetch('http://localhost:3000/list/add', {
-        method: 'post',
+    fetch('http://localhost:3000/list/update', {
+        method: 'put',
         body: JSON.stringify(addedList),
         headers: {
             'Accept': 'application/json',
@@ -28,6 +30,6 @@ export const saveList = () => {
             location.href = url
         })
         .catch((error) => {
-            console.error('Error:', error)
+            console.error('Error:', error);
         })
 }

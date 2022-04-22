@@ -60,29 +60,30 @@ const add = (req, res) => {
 // update list by ID
 const update = (req, res) => {
   let listID = req.body.listID
+  console.log('REQ', listID)
 
   let updateList = {
     name: req.body.name,
     date: req.body.date,
     listItems: req.body.listItems
   }
-
-  List.findByIdAndUpdate(listID, { $set: updateList })
+  List.findByIdAndUpdate(listID, { $set: updateList, function (error, list) {callback(error, list)}})
     .then(() => {
       res.json({
-        message: "List updated successfully"
+        message: 'updated'
       })
     })
     .catch((error) => {
       res.json({
         message: "An error has occured!",
-        error
+        error: error
       })
     })
 }
 
 // delete list
 const deleteList = (req, res) => {
+  console.log(`Received ${req.body}`)
   let listID = req.body.listID;
   List.findByIdAndRemove(listID)
     .then(() => {

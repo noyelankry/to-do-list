@@ -12,29 +12,32 @@
     <script type="module" src="js/main.js" defer></script>
     <script type="module" src="js/utils/add-to-list.js" defer></script>
 
-    <title>My lists</title>
+    <title>Update List</title>
 </head>
 
-<body onload="getLists()">
+<body>
     <header>
-        <h1 id="main-header">My To Do Lists</h1>
+        <h1 id="main-header">To Do List</h1>
     </header>
     <nav>
         <button class="login-btn">Login</button>
         <img src="./img/fingerprint-icon.jpg" alt="" class="login-img">
         <nav class="main-menu">
             <a href="./index.html" class="nav-link">Home</a>
-            <a href="./new-list.html" class="nav-link">New List</a>
+            <a href="./my-lists.html" class="nav-link">My Lists</a>
         </nav>
     </nav>
+    <div class="input-section">
+        <input type="text" id="input-box" placeholder="what do you need to do today?" maxlength="35">
+        <button id="add-to-list-btn">Add to list!</button>
+    </div>
 
     <div>
-        <select name="lists-selector" id="lists-selector"></select>
-        <br>
-        <div class="choose-action">
-            <button id="show-list-btn" onclick="showList()">show list</button>
-            <button id="delete-list-btn" onclick="deleteList()">delete list</button>
-        </div>
+        <div id="list-name">name</div>
+        <div id="created-date">created</div>
+        <div id="updated-date">updated</div>
+        <ul id="result-list"></ul>
+        <button id="update-n-exit-btn" onclick="updateList()">Update & Exit</button>
     </div>
 </body>
 

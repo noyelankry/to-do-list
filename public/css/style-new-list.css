@@ -171,11 +171,11 @@ label {
     display: inline;
 }
 
-#save-n-exit-btn {
+#save-n-exit-btn ,
+#update-list-btn {
     display: block;
     margin: 0 auto;
     left: 50%;
-    width: 120px;
     height: 30px;
     margin-left: -60px;
     position: absolute;
@@ -196,4 +196,28 @@ header {
     text-align: left;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.choose-action {
+    margin-top: 5px;
+}
+
+#show-list-btn,
+#delete-list-btn {
+    display: inline;
+    margin: 0 auto;
+    left: 50%;
+    height: 30px;
+    font-size: 20px;
+}
+
+#update-n-exit-btn {
+    display: block;
+    margin: 0 auto;
+    left: 50%;
+    height: 30px;
+    margin-left: -60px;
+    position: absolute;
+    bottom: 30;
+    font-size: 20px;
 }
