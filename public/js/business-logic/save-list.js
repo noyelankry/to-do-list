@@ -13,7 +13,11 @@ export const saveList = () => {
     console.log(addedList)
     fetch('http://localhost:3000/list/add', {
         method: 'post',
-        body: addedList
+        body: JSON.stringify(addedList),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }
     }).then(response => response.json())
         .then(data => {
             console.log('Success:', data);

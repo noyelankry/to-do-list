@@ -36,6 +36,7 @@ const show = (req, res) => {
 
 // add a list to the DB
 const add = (req, res) => {
+  console.log(`Received ${JSON.stringify(req.body)}`)
   let list = new List({
     name: req.body.name,
     date: req.body.date,
