@@ -7,6 +7,8 @@ import { getLists } from "./business-logic/get-lists.js"
 import { showList } from "./business-logic/show-list.js"
 import { deleteList } from "./business-logic/delete-list.js"
 import { redirectCheck } from "./utils/redirect-check.js"
+import { signUp } from "./user-login/sign-up.js"
+import { signIn } from "./user-login/sign-in.js"
 
 const addBtn = document.getElementById('add-to-list-btn')
 if(addBtn){
@@ -30,3 +32,5 @@ window.getLists = getLists
 window.showList = showList
 window.redirectCheck = redirectCheck
 window.deleteList = deleteList
+window.signUp = signUp 
+window.signIn = signIn 

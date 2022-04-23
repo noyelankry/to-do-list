@@ -7,31 +7,29 @@
     <link href="https://db.onlinewebfonts.com/c/53cc17cdf80244c21f5b20e98a4b0bd1?family=Hogfish+DEMO" rel="stylesheet"
         type="text/css" />
     <link rel="stylesheet" href="../css/login.css">
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="module" src="../js/main.js" defer></script>
 
-    <title>Login</title>
+
+    <title>Sign Up</title>
 </head>
 
 <body class="homepage">
-    <h1 onclick="location.href = '../index.html'">Login</h1>
+    <h1 onclick="location.href = '../index.html'">Sign Up!</h1>
     <nav>
         <img src="../img/fingerprint-icon.jpg" alt="" class="login-img">
     </nav>
-    <br>
     <div>
-        <div class="login" >
-            <input type="text" placeholder="username" name="user" id="username">
+        <div class="sign-up" >
+            <input type="text" placeholder="name" name="name" id="name">
+            <input type="email" placeholder="email" name="email" id="email">
+            <input type="text" placeholder="phone" name="phone" id="phone">
             <input type="password" placeholder="password" name="password" id="password">
-            <button type="submit" class="submit-login-btn" onclick="signIn()">Login</button>
+            <input type="password" placeholder="re-enter password" name="password-2">
+            <button type="submit" class="submit-register-btn" onclick="signUp()">Submit</button>
         </div>
     </div>
-    <div>OR</div> 
-    <br>
-    <div>
-        <button onclick="location.href ='./register.html'">Sign Up!</button>
-    </div>
+    
 </body>
 
 </html>
