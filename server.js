@@ -10,9 +10,6 @@ const mongoose = require('mongoose')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 
-app.set('view engine', 'ejs')
-app.set('views', `${__dirname}/views`)
-app.set('layout', 'layouts/layout')
 app.use(expressLayouts)
 app.use(express.static('public'))
 
@@ -36,3 +33,6 @@ app.listen(PORT, () => {
 
 const listRoute = require('./js/api/routes/lists-route')
 app.use('/list', listRoute)
+
+const authRoute = require('./js/api/routes/auth-route')
+app.use('/user', authRoute)
