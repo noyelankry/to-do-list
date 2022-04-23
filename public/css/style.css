@@ -118,9 +118,13 @@ input {
 }
 
 #home-page-logo {
-    display:flex;
-    max-width: 25vw;
+    display:block;
+    max-width: 350px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
     flex: 4;
+    padding-bottom: 20px;
 }
 
 #home-page-header,
