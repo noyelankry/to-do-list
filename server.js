@@ -1,14 +1,17 @@
+import express from 'express'
+import expressLayouts from 'express-ejs-layouts'
+import mongoose from 'mongoose'
+import morgan from 'morgan'
+import bodyParser from 'body-parser'
+import dotenv from 'dotenv'
+import { router as listRoute } from './js/api/routes/lists-route.js'
+import { router as authRoute } from './js/api/routes/auth-route.js'
+
 if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config()
+    dotenv.config()
 }
 
-const express = require('express')
 const app = express()
-const expressLayouts = require('express-ejs-layouts')
-
-const mongoose = require('mongoose')
-const morgan = require('morgan')
-const bodyParser = require('body-parser')
 
 app.use(expressLayouts)
 app.use(express.static('public'))
@@ -31,8 +34,5 @@ app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`)
 })
 
-const listRoute = require('./js/api/routes/lists-route')
 app.use('/list', listRoute)
-
-const authRoute = require('./js/api/routes/auth-route')
 app.use('/user', authRoute)

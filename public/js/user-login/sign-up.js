@@ -22,6 +22,8 @@ export const signUp = () => {
     }).then(response => response.json())
         .then(data => {
             console.log('Success:', data)
+            const url = new URL(`http://localhost:3000/my-lists.html`)
+            location.href = url
         })
         .catch((error) => {
             console.error('Error:', error);

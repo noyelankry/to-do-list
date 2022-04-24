@@ -1,8 +1,7 @@
-const express = require("express")
-const List = require("../models/lists")
+import List from '../models/lists.js'
 
 // show the list of lists
-const index = (req, res) => {
+export const index = (req, res) => {
   List.find()
     .then((response) => {
       res.json({
@@ -18,7 +17,7 @@ const index = (req, res) => {
 }
 
 // return a specific list
-const show = (req, res) => {
+export const show = (req, res) => {
   let listID = req.body.listID;
   List.findById(listID)
     .then((response) => {
@@ -35,7 +34,7 @@ const show = (req, res) => {
 }
 
 // add a list to the DB
-const add = (req, res) => {
+export const add = (req, res) => {
   console.log(`Received ${JSON.stringify(req.body)}`)
   let list = new List({
     name: req.body.name,
@@ -58,7 +57,7 @@ const add = (req, res) => {
 }
 
 // update list by ID
-const update = (req, res) => {
+export const update = (req, res) => {
   let listID = req.body.listID
   console.log('REQ', listID)
 
@@ -67,7 +66,7 @@ const update = (req, res) => {
     date: req.body.date,
     listItems: req.body.listItems
   }
-  List.findByIdAndUpdate(listID, { $set: updateList, function (error, list) {callback(error, list)}})
+  List.findByIdAndUpdate(listID, { $set: updateList, function(error, list) { callback(error, list) } })
     .then(() => {
       res.json({
         message: 'updated'
@@ -82,7 +81,7 @@ const update = (req, res) => {
 }
 
 // delete list
-const deleteList = (req, res) => {
+export const deleteList = (req, res) => {
   console.log(`Received ${req.body}`)
   let listID = req.body.listID;
   List.findByIdAndRemove(listID)
@@ -97,12 +96,4 @@ const deleteList = (req, res) => {
         error
       })
     })
-}
-
-module.exports = {
-  index,
-  show,
-  add,
-  update,
-  deleteList
 }

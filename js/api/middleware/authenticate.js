@@ -1,6 +1,6 @@
-const jwt = require('jsonwebtoken')
+import * as jwt from 'jsonwebtoken'
 
-const authenticate = (req, res, next) => {
+export const authenticate = (req, res, next) => {
     try {
         const secondString = 1
         const token = req.headers.authorization.split(' ')[secondString]
@@ -9,11 +9,9 @@ const authenticate = (req, res, next) => {
         req.user = decode
         next()
     }
-    catch(error) {
+    catch (error) {
         res.json({
             message: "Authentication Failed"
         })
     }
 }
-
-module.exports = authenticate

@@ -1,8 +1,8 @@
-const User = require("../models/user");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+import User from '../models/user.js'
+import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
 
-const register = (req, res) => {
+export const register = (req, res) => {
   bcrypt.hash(req.body.password, 10, function (err, hashedPass) {
     if (err) {
       res.json({
@@ -28,7 +28,7 @@ const register = (req, res) => {
 }
 
 
-const login = (req, res) => {
+export const login = (req, res) => {
   console.log('Login received', req.body)
   const username = req.body.username
   const password = req.body.password
@@ -62,9 +62,4 @@ const login = (req, res) => {
         })
       }
     })
-}
-
-module.exports = {
-  register,
-  login
 }
