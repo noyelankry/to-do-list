@@ -1,5 +1,4 @@
 import express from 'express'
-import expressLayouts from 'express-ejs-layouts'
 import mongoose from 'mongoose'
 import morgan from 'morgan'
 import bodyParser from 'body-parser'
@@ -12,8 +11,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const app = express()
-
-app.use(expressLayouts)
 app.use(express.static('public'))
 
 mongoose.connect(process.env.DATABASE_URL, {
