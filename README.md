@@ -5,7 +5,12 @@ Below you'll find essential information about the project, its features, and how
 on your local machine.
 
 ## 1. Introduction
-The To-Do List project is a simple web application that allows users to create and manage their to-do tasks. As a student project, the main aim was to practice and demonstrate proficiency in JavaScript and server-side programming with Node.js. It provides a user-friendly interface to add, edit, and delete tasks, helping users stay organized and productive.
+The To-Do List project is a simple web application that allows users 
+to create and manage their to-do tasks. 
+As a student project, the main aim was to practice and demonstrate proficiency in JavaScript 
+and server-side programming with Node.js. 
+It provides a user-friendly interface to add, edit, and delete tasks, 
+helping users stay organized and productive.
 
 ## 2. Features
 Add new tasks with a title and description.
@@ -26,7 +31,7 @@ MongoDB: A NoSQL database used to store and retrieve task data.
 ## 4. Installation
 To set up the project locally, follow these steps:
 
-Clone the repository from GitHub: git clone https://https://github.com/noyelankry/to-do-list
+Clone the repository from GitHub: git clone https://github.com/noyelankry/to-do-list
 Navigate to the project directory: cd to-do-list
 Install the required dependencies: npm install
 Set up the MongoDB connection by updating the database configuration in config.js.
